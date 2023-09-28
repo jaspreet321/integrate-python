@@ -24,6 +24,5 @@ jobs:
         python -m pip install --upgrade pip
     - name: run any python code
       run: |
-        cd ..
         ls -ltr
         python datatype_casting.py
