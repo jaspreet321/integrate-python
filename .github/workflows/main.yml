@@ -26,4 +26,12 @@ jobs:
     - name: run any python code
       run: |
         ls -ltr
+        echo "running datatype_casting"
         python datatype_casting.py
+        echo "running basic_calculations"
+        python basic_calculations.py
+        echo "running dictionary_py"
+        python myDict_tough.py
+        echo "running os-module function"
+        python os-module.py
+
