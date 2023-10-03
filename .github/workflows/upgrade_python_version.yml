@@ -64,7 +64,7 @@ jobs:
         if-no-files-found: error
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
-        cat artifacts.txt
+        cat artifact.txt
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
