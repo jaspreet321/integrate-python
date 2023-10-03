@@ -43,20 +43,13 @@ jobs:
         ls -ltr
         echo "running datatype_casting"
         python datatype_casting.py >> artifact.txt
-    - name: Archive code coverage results
-<<<<<<< HEAD
+    - name: Uploading artifacts
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: output/test/code-coverage.html
-=======
-        uses: actions/upload-artifact@v4
-        with:
-          name: code-coverage-report
-          path: artifact.txt
-          if-no-files-found: error
->>>>>>> 4172246 ( workflow changes)
-
+        path: artifact.txt
+        if-no-files-found: error
+        
   #stage3
   compare_versions:
     needs: build
@@ -65,7 +58,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
-        pwd
+        cat artifacts.txt
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
