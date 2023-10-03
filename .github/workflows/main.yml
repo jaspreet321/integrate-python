@@ -1,6 +1,7 @@
 name: Upgrade python CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -34,4 +35,5 @@ jobs:
         python myDict_tough.py
         echo "running os-module function"
         python os-module.py
+
 
