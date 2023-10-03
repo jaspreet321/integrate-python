@@ -68,6 +68,8 @@ jobs:
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
         ls -lstr
+        cd output
+        ls
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
