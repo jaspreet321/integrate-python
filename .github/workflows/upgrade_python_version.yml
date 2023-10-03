@@ -56,6 +56,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Downloading artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: code-coverage-report
+        path: artifact.txt
+        if-no-files-found: error
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
         cat artifacts.txt
