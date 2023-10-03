@@ -44,10 +44,10 @@ jobs:
         echo "running datatype_casting"
         python datatype_casting.py
     - name: Archive code coverage results
-        uses: actions/upload-artifact@v4
-        with:
-          name: code-coverage-report
-          path: output/test/code-coverage.html
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: output/test/code-coverage.html
 
   #stage3
   compare_versions:
