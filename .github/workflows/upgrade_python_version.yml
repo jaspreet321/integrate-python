@@ -21,14 +21,15 @@ jobs:
         printenv
         
   directory:                                           #STAGE2
+    needs: check_envariables
     runs-on: ubuntu-latest
     steps:
     - name: verify the directory
       run: |
-        list
+        ls -lsart
 
   build:                                              #STAGE3
-    needs: directory
+    needs: check_envariables
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -54,7 +55,7 @@ jobs:
         if-no-files-found: error
         
   compare_versions:                                #STAGE4
-    needs: build
+    needs: check_envariables
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
