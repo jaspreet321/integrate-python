@@ -9,8 +9,8 @@ on:
     branches: [ "main" ]
 
 env:
-  VERSION: 5.0
-  VERSION2: 7.0
+  VERSION: 5
+  VERSION2: 7
 
 jobs:
   directory:
@@ -57,5 +57,5 @@ jobs:
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
         pwd
-        chmod +x versioncompare.sh
+        sudo chmod +x versioncompare.sh
         ./versioncompare.sh
