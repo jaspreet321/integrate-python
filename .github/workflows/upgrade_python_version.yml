@@ -68,7 +68,7 @@ jobs:
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
         cd output
-        cat artifact.sh
+        cat artifact.txt
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
