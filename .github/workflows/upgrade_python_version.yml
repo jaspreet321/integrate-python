@@ -42,12 +42,20 @@ jobs:
       run: |
         ls -ltr
         echo "running datatype_casting"
-        python datatype_casting.py
+        python datatype_casting.py >> artifact.txt
     - name: Archive code coverage results
+<<<<<<< HEAD
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
         path: output/test/code-coverage.html
+=======
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: artifact.txt
+          if-no-files-found: error
+>>>>>>> 4172246 ( workflow changes)
 
   #stage3
   compare_versions:
