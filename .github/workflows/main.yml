@@ -57,4 +57,5 @@ jobs:
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
         pwd
+        chmod +x versioncompare.sh
         versioncompare.sh
