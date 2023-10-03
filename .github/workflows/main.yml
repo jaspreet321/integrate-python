@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  VERSION: 5.0
+  VERSION2: 7.0
+
 jobs:
   directory:
     runs-on: ubuntu-latest
@@ -24,7 +28,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        python-version: [3.9]
+        python-version: [3.11, 3.10, 3.9, 3.8, 3.7, 3.6, 3.5]
 
     steps:
     - uses: actions/checkout@v2
@@ -46,4 +50,11 @@ jobs:
         echo "running os-module function"
         python os-module.py
 
+  compare_versions:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: compare both the versions mentioned as envrionmental variables above
+      run: |
+        pwd
+        versioncompare.sh
