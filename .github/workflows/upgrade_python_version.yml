@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: artifact.txt
+        path: output/artifact.txt
         if-no-files-found: error
         
   compare_versions:                                #STAGE4
