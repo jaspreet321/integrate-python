@@ -28,7 +28,6 @@ jobs:
     needs: directory
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1
       matrix:
         python-version: [3.11, 3.10]
     steps:
@@ -44,12 +43,11 @@ jobs:
         ls -ltr
         echo "running datatype_casting"
         python datatype_casting.py
-        echo "running basic_calculations"
-        python basic_calculations.py
-        echo "running dictionary_py"
-        python myDict_tough.py
-        echo "running os-module function"
-        python os-module.py
+    - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: output/test/code-coverage.html
 
   #stage3
   compare_versions:
