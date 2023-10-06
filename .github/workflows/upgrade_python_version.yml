@@ -54,10 +54,11 @@ jobs:
         path: artifact.txt
         if-no-files-found: error
         
-  compare_versions:                                #STAGE4
+  download_artifact:                                #STAGE4
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Downloading artifacts
       uses: actions/download-artifact@v3
       with:
@@ -67,6 +68,11 @@ jobs:
       run: |
         cd output
         ls -lastr
+        
+  compare_versions:                                #STAGE5
+    needs: check_envariables
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v3
     - name: compare both the versions mentioned as envrionmental variables above
         chmod +x versioncompare.sh
