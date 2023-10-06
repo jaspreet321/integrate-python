@@ -65,9 +65,6 @@ jobs:
         name: code-coverage-report
         path: output/artifact.txt
         if-no-files-found: error
-      run: |
-        cd output
-        ls -lastr
         
   compare_versions:                                #STAGE5
     needs: check_envariables
