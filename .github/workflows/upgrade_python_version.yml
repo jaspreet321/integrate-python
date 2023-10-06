@@ -52,7 +52,7 @@ jobs:
       with:
         name: code-coverage-report
         path: artifact.txt
-        if-no-files-found: error
+        expire_in: never
         
   download_artifact:                                #STAGE4
     needs: build
@@ -63,8 +63,8 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: code-coverage-report
-        path: output/artifact.txt
-        if-no-files-found: error
+        path: artifact.txt
+        expire_in: never
         
   compare_versions:                                #STAGE5
     needs: check_envariables
