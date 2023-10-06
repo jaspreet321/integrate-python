@@ -65,9 +65,7 @@ jobs:
         name: code-coverage-report
         path: output/artifact.txt
         if-no-files-found: error
-      run: |
-        cat /home/runner/work/integrate-python/integrate-python/output/artifact.txt
-    
+        
   compare_versions:                                #STAGE5
     needs: check_envariables
     runs-on: ubuntu-latest
@@ -75,6 +73,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: compare both the versions mentioned as envrionmental variables above
       run: |
+        cat /home/runner/work/integrate-python/integrate-python/output/artifact.txt
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
