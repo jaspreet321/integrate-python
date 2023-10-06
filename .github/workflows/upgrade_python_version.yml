@@ -72,6 +72,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: compare both the versions mentioned as envrionmental variables above
+      run: |
         chmod +x versioncompare.sh
         ./versioncompare.sh
 
