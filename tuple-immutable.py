@@ -1,5 +1,5 @@
 #what is tuple
-#tuple is immutable, that means it's value cannot
+#tuple is immutable, that means it's value cannot change
 #this is very common error message in python codes "immutable data type"
 
 #simple example
