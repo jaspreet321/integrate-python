@@ -1,5 +1,5 @@
-#functions starts with 'def' & finction can be called anytime in the script to perform it role, same as gitlab pipeline
-# variable 'i' has bene assigned with a formula & this formula will be called many times in the script
+#functions starts with 'def' & function can be called anytime in the script to perform it role, same as gitlab pipeline
+# variable 'i' has been assigned with a formula & this formula will be called many times in the script
 
 def add(number):
     i = (number[0] + number[1])
@@ -20,25 +20,25 @@ print(addition2)
 print(addition3)
 
 
-##In simple terms, function in oythin stores the 'formula' that whole script will reuse as many times
+##In simple terms, function in python stores the 'formula' that whole script will reuse as many times
 
 def greet(name):
-    p = ("have a good day" + name)
+    p = ("have a good day" + " " +  name)
     return p
 
-name = "bot"
+name = "boston"
 greet1 = greet(name)
 
 print(greet1)
 
 
 def greet(name):
-    p = ("have a good day" + name)
+    p = ("have a good day" + " " + name)
     return p
 
-name = "bot"
-greet1 = greet(name)
+abc = "paddy"
+greet2 = greet(abc)
 
-print(greet1)
+print(greet2)
 
 
