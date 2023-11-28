@@ -5,8 +5,11 @@ abc = 46229
 jkh = 6573
 
 #check the datatype of mentioned variable 'xyz' & 'abc'
+print(xyz)
 print(type(xyz))
+print(abc)
 print(type(abc))
+print(jkh)
 print(type(jkh))
 
 #change variable 'xyz' from string to integer
