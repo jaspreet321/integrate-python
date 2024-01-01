@@ -7,7 +7,7 @@ class player:
     company = "cricket"
 
     def getplayerinsight(self):
-        print("This employee is a good cricketer")
+        print("This employee is a good cricketer....\n")
 
 class enhancement(employee, player):
       insight = "improvement"
